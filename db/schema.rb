@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150419205232) do
+ActiveRecord::Schema.define(version: 20150518214948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(version: 20150419205232) do
   create_table "categories", force: :cascade do |t|
     t.string  "name"
     t.integer "count"
+    t.integer "complement_count"
+    t.string  "translated_name"
+  end
+
+  create_table "complements", force: :cascade do |t|
+    t.integer "category_id"
+    t.string  "word"
+    t.integer "count"
+    t.float   "tfidf"
+    t.float   "weight"
+    t.float   "normalized_weight"
+    t.float   "mid_weight"
   end
 
   create_table "data", force: :cascade do |t|
@@ -32,6 +44,15 @@ ActiveRecord::Schema.define(version: 20150419205232) do
     t.integer "category_id"
     t.string  "word"
     t.integer "count"
+    t.float   "tfidf"
+    t.float   "weight"
+    t.float   "normalized_weight"
+  end
+
+  create_table "words", force: :cascade do |t|
+    t.string "word"
+    t.float  "df"
+    t.float  "idf"
   end
 
 end

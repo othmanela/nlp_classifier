@@ -11,5 +11,15 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require bootstrap
+ *= require flat-ui
  *= require_self
  */
+
+img.img_logo{
+  height:300px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

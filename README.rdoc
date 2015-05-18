@@ -1,3 +1,22 @@
+Tasnef
+------
+Tasnef is a classifier for arabic news articles
+
+
+Introduction and Motivation
+-----------
+
+I started this project with the aim to do one simple thing: classify arabic news articles into four distinct categories. A task also known as hard classification in machine learning. 
+The idea came into my mind while reading a book I would recomend "Introduction to Arabic Natural Language Processing" by Nizar Y. Habash. I realized that very few work was done over the arabic langage in general, in fact that was the only book I could find, that deals with arabic and computer science, I then decided to jump in and hack something up. 
+
+The approach
+------------
+
+While thinking about the project architecture, I realized that I needed a stemmer for the task to be done. Thank God, I was able to find this reaserch paper(). It had the algorithm, I had to code it, adn from there I was able to do nlp_arabic which is a gem that ISRI arabic stemmer. 
+
+
+Why did I chose the news articles 
+Because hey, supervised learning is fun when done by someone else
 == README
 
 This README would normally document whatever steps are necessary to get the

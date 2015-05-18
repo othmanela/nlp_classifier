@@ -1,0 +1,24 @@
+<div class="container" >     
+  <div class="span12" > 
+    <div class="row" style="background-color: #ECF0F1;">
+      <%= image_tag("logo2.png", :alt => 'Tasnef logo',:class => 'img_logo') %>
+    </div>
+    <div class="row" style="background-color: rgb(236,236,236);">
+      <div class="col-md-3">
+        <% if @category %>
+        <%= @category.name%>
+        <%= @category.translated_name%>
+        <%end%>
+      </div>
+      <div class="col-md-9">
+        <form action="/" method="POST">
+          <div class="form-group">
+            <textarea class="form-control" rows="13" name="the_article"></textarea>
+            <!-- <input class="form-control" type="text" name="the_article"> -->
+          </div>
+          <input class="btn btn-default" type=submit>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
