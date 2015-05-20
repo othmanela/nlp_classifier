@@ -1,5 +1,0 @@
-Tasnef
-------
-Tasnef is a classifier for arabic news articles
-
-Read about the project on {Blogger}[http://othmanel.blogspot.com/2015/05/tasnef-arabic-news-articles-classifier.html]
