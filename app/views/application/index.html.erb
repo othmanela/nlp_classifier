@@ -1,24 +1,54 @@
-<div class="container" >     
-  <div class="span12" > 
-    <div class="row" style="background-color: #ECF0F1;">
-      <%= image_tag("logo2.png", :alt => 'Tasnef logo',:class => 'img_logo') %>
-    </div>
-    <div class="row" style="background-color: rgb(236,236,236);">
-      <div class="col-md-3">
-        <% if @category %>
-        <%= @category.name%>
-        <%= @category.translated_name%>
-        <%end%>
+<div class="container">     
+  <div class="span12"> 
+    <div class="row top">
+      <div class="col-sm-2"> 
+        <br>
+        <p dir="ltr" lang="en" align="center">Read about me on:
+          <%= link_to image_tag("logo_blogger.png", :alt => 'Blogger logo',:class => 'icon_logo'), 'http://othmanel.blogspot.com/2015/05/tasnef-arabic-news-articles-classifier.html', :target => '_blank' %>
+        </p>
+        <p dir="ltr" lang="en" align="center">Fork me on:
+          <%= link_to image_tag("logo_github.png", :alt => 'Github logo',:class => 'icon_logo') , 'https://github.com/othmanela/nlp_classifier', :target => '_blank'%>
+        </p>
+
       </div>
-      <div class="col-md-9">
-        <form action="/" method="POST">
-          <div class="form-group">
-            <textarea class="form-control" rows="13" name="the_article"></textarea>
-            <!-- <input class="form-control" type="text" name="the_article"> -->
-          </div>
-          <input class="btn btn-default" type=submit>
-        </form>
+      <div class="col-sm-10" > 
+        <%= image_tag("logo2.png", :alt => 'Tasnef logo',:class => 'img_logo') %>
       </div>
     </div>
   </div>
+  <hr class="style_back">
+  <div class="row bottom">
+    <% flash.each do |key, value| %>
+      <div role="alert" class="<%=flash_class(key)%>">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <p dir="ltr" lang="en"><%= value %></p>
+      </div>
+    <% end %>
+    <div class="col-md-3">
+      <br>
+      <br>
+      <% if @category %>
+      يعتبر أن هذا المقال ينتمي إلى الفئة التالية: 
+      <span class="tag label label-info">
+        <%= @category.name%>
+      </span>
+      <br>
+      <br>
+      This article is considered to belong to the following category:
+      <span class="tag label label-primary"> 
+        <%= @category.translated_name%>
+      </span>
+      <% end %>
+    </div>
+    <div class="col-md-9">
+      <h6>ادخل نص مقال في أدناه :</h6>
+      <%= form_tag("/", method: "post") do %>
+        <div class="form-group">
+        <%= text_area_tag 'input_article', nil, class: 'form-control', rows: 13, placeholder: 'Enter an article\'s text'%>
+        </div>
+        <%= submit_tag "Search", class: 'btn btn-default'%>
+      <% end %>
+  </div>
 </div>
+
+
